@@ -101,6 +101,26 @@ public class InnerGenConfigDO extends GenConfigDO {
      */
     private boolean hasTimeField;
 
+    /**
+     * Menu icon
+     */
+    private String icon = "list";
+
+    /**
+     * Menu sort order
+     */
+    private Integer sort = 1;
+
+    /**
+     * Parent menu ID placeholder
+     */
+    private String parentMenuId = "#{parentMenuId}";
+
+    /**
+     * Menu type (2 for menu)
+     */
+    private Integer menuType = 2;
+
     public InnerGenConfigDO() {
     }
 

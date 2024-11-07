@@ -91,9 +91,9 @@ public class GeneratorServiceImpl implements GeneratorService {
         }
         tableList.removeIf(table -> StrUtil.equalsAnyIgnoreCase(table.getTableName(), generatorProperties
             .getExcludeTables()));
-        CollUtil.sort(tableList, Comparator.comparing(Table::getCreateTime)
-            .thenComparing(table -> Optional.ofNullable(table.getUpdateTime()).orElse(table.getCreateTime()))
-            .reversed());
+//        CollUtil.sort(tableList, Comparator.comparing(Table::getCreateTime)
+//            .thenComparing(table -> Optional.ofNullable(table.getUpdateTime()).orElse(table.getCreateTime()))
+//            .reversed());
         List<TableResp> tableRespList = BeanUtil.copyToList(tableList, TableResp.class);
         PageResp<TableResp> pageResp = PageResp.build(pageQuery.getPage(), pageQuery.getSize(), tableRespList);
         pageResp.getList().parallelStream().forEach(tableResp -> {
