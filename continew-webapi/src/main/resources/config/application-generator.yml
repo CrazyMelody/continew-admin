@@ -16,7 +16,9 @@ generator:
         - mediumtext
         - longtext
         - tinytext
+      JSONObject:
         - json
+        - jsonb
       Integer:
         - int
         - tinyint
@@ -43,7 +45,9 @@ generator:
         - varchar
         - char
         - text
+      JSONObject:
         - json
+        - jsonb
       Integer:
         - int2
         - int4
@@ -131,6 +135,11 @@ generator:
       backend: false
     Menu:
       template-path: backend/Menu.ftl
+      packageName: sql
+      extension: .sql
+      backend: true
+    MenuPG:
+      template-path: backend/Menu_pg.ftl
       packageName: sql
       extension: .sql
       backend: true

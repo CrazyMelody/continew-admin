@@ -7,7 +7,9 @@ import java.time.*;
 <#if hasBigDecimalField>
 import java.math.BigDecimal;
 </#if>
-
+<#if hasJsonField>
+    import com.alibaba.fastjson2.JSONObject;
+</#if>
 <#if hasRequiredField>
 import jakarta.validation.constraints.*;
 </#if>

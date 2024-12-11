@@ -100,6 +100,11 @@ public class InnerGenConfigDO extends GenConfigDO {
      */
     private boolean hasTimeField;
 
+    /**
+     * 是否包含 JSON 字段
+     */
+    private boolean hasJsonField;
+
     public InnerGenConfigDO() {
     }
 

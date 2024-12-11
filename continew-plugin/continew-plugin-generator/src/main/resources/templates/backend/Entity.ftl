@@ -7,6 +7,11 @@ import java.time.*;
 <#if hasBigDecimalField>
 import java.math.BigDecimal;
 </#if>
+<#if hasJsonField>
+    import com.alibaba.fastjson2.JSONObject;
+    import com.baomidou.mybatisplus.annotation.TableField;
+    import com.baomidou.mybatisplus.extension.handlers.Fastjson2TypeHandler;
+</#if>
 
 import lombok.Data;
 
@@ -21,7 +26,7 @@ import top.continew.starter.extension.crud.model.entity.BaseDO;
  * @since ${datetime}
  */
 @Data
-@TableName("${tableName}")
+@TableName(value = "${tableName}"<#if hasJsonField>, autoResultMap = true</#if>)
 public class ${className} extends BaseDO {
 
     @Serial
@@ -32,6 +37,9 @@ public class ${className} extends BaseDO {
     /**
      * ${fieldConfig.comment}
      */
+      <#if fieldConfig.fieldType == "JSONObject">
+          @TableField(typeHandler = Fastjson2TypeHandler.class)
+      </#if>
     private ${fieldConfig.fieldType} ${fieldConfig.fieldName};
   </#list>
 </#if>

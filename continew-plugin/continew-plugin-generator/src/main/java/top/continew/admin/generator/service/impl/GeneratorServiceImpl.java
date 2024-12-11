@@ -370,6 +370,9 @@ public class GeneratorServiceImpl implements GeneratorService {
             if (TIME_PACKAGE_CLASS.contains(fieldType)) {
                 genConfig.setHasTimeField(true);
             }
+            if ("JSONObject".equals(fieldType)) {
+                genConfig.setHasJsonField(true);
+            }
             // 字典码
             if (StrUtil.isNotBlank(fieldConfig.getDictCode())) {
                 genConfig.setHasDictField(true);
